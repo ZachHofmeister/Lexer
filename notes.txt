@@ -1,0 +1,32 @@
+Planning
+
+Processing overview:
+
+1. Open the input file (lexAnalysis())
+2. Begin loop through input file.
+    * Probably a while loop
+    * Passes file to lexer, stores output in data structure
+    * Ends when ifstream gives EOF
+3. Lexer (lexer())
+    * Is a finite state machine
+
+    * Reads from input file
+    * Uses Regular Expression principles to narrow down type of token
+    * Reads until accepting state is reached
+        * This accepting state could include that it has found an unknown token
+    * Symbol table will list keywords, separators, and operators
+
+    *FSM diagram: This is weird, figure it out next class? Doesn't feel right. Draw it out maybe it makes sense
+        * ∑ (Inputs) = {alpha, digit, punctuation, space} (character types)
+        * Q (States) = {nothing, keywords, identifiers, separators, operators, int, real, unknown} (token types)
+        * q0 (Initial state) = nothing
+        * F (Final/accepting states) = {}
+        * N (Input/State diagram) = (
+            
+        )
+
+Cut ideas:
+Read input from file into string
+    Instead, pass ifstream file directly to the lexer so it can read char by char, and advance index
+Lexer reads until whitespace and passes to FSM
+    Instead, lexer is a finite state machine and it reads until an accepting state is reached
