@@ -30,3 +30,20 @@ Read input from file into string
     Instead, pass ifstream file directly to the lexer so it can read char by char, and advance index
 Lexer reads until whitespace and passes to FSM
     Instead, lexer is a finite state machine and it reads until an accepting state is reached
+
+
+
+
+
+
+REs: if inside certain states, REs could be used to validate input?
+ident: [a-zA-Z]([a-zA-Z]|\d|\$)*
+int: \d+
+float: (\+|-)?\d*\.\d+
+
+my own format:
+ident: \a(\a|\d|$)*
+int: \d+
+float: (\+|-)?\d*\.\d+
+
+Maybe try with table

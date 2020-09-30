@@ -1,6 +1,6 @@
 #==================================================================================================
 #Author Name:          Zach Hofmeister
-#Author Email:         zachhof@me.com
+#Author Email:         zachhof@me.com, zachhof@csu.fullerton.edu
 #==================================================================================================
 
 #!/bin/bash
@@ -9,7 +9,8 @@
 compilerName="g++-10"
 filesToCompile="*.cpp"
 exeName="lex"
-exeArgs="AssignmentInfo/Samples/SampleInputFile.txt"
+# exeArgs="AssignmentInfo/Samples/SampleInputFile.txt"
+exeArgs="AssignmentInfo/Samples/SampleInputFile.txt out.txt"
 
 #other parameters
 echoColor="\e[32m" #Green: \e[32m
@@ -22,8 +23,10 @@ $compilerName $filesToCompile -g -o $exeName
 echo -e "${echoColor}Running: ./$exeName $exeArgs" && tput init
 ./$exeName $exeArgs
 
-echo -e "${echoColor}\nRemoving executable..." && tput init
-rm $exeName
+# echo -e "${echoColor}\nRemoving executable..." && tput init
+# rm $exeName
+
+echo -e "${echoColor}\nFinished." && tput init
 
 # # optional extra debug
 # echo -e "${echoColor}\nExpected output:" && tput init

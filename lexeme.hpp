@@ -9,6 +9,8 @@ class Lexeme {
     std::string _token;
 
     public:
+    Lexeme(std::string lex = "", std::string token = "");
+
     void lex(std::string lex);
     std::string lex();
 

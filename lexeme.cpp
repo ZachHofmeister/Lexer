@@ -2,6 +2,11 @@
 
 #include "lexeme.hpp"
 
+Lexeme::Lexeme(std::string lex, std::string token) {
+    _lex = lex;
+    _token = token;
+}
+
 void Lexeme::lex(std::string lex) { _lex = lex; }
 std::string Lexeme::lex() { return _lex; }
 
