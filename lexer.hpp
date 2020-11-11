@@ -1,18 +1,17 @@
 #ifndef LEXER_HPP
 #define LEXER_HPP
 
-#include <iostream>
 #include <string>
 #include <vector>
+#include <array>
+#include <utility>
+#include <regex>
 
 #include "lexeme.hpp"
 
-enum State : short {Start, Identifier, Keyword, Separator, Operator, Float, Int, Comment, Unknown};
-
-Lexeme lexer(std::ifstream &file);
-bool isKeyword(std::string str);
-bool openFile(std::string fileName, /*return*/ std::ifstream &file);
-bool openFile(std::string fileName, /*return*/ std::ofstream &file);
+std::vector<Lexeme> lexicalAnalysis(std::ifstream &file); //Performs lexical analysis on a file, returns vector of lexemes
+bool lexer(std::array<std::pair<std::string, std::string>, 8> tokenRegex, std::regex regex, std::string &fileStr, /*return*/ Lexeme &lex);
+std::string readFile(std::ifstream &file);
 void printLexemes(std::ostream &stream, std::vector<Lexeme> &lexemes);
 
 #endif //LEXER_HPP

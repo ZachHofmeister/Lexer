@@ -9,17 +9,17 @@
 compilerName="g++-10"
 filesToCompile="*.cpp"
 exeName="lex"
-# exeArgs="AssignmentInfo/Samples/SampleInputFile.txt"
-exeArgs="AssignmentInfo/Samples/SampleInputFile.txt out.txt"
+exeArgs="test1.txt out.txt"
 
 #other parameters
 echoColor="\e[32m" #Green: \e[32m
 secondColor="\e[96m" #Light cyan: \e[32m
 
-#main compilation
+#compile
 echo -e "${echoColor}Compiling files: $filesToCompile as executable: \"$exeName\" with $compilerName" && tput init
 $compilerName $filesToCompile -g -o $exeName
 
+#run the program
 echo -e "${echoColor}Running: ./$exeName $exeArgs" && tput init
 ./$exeName $exeArgs
 
